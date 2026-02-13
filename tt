@@ -1,0 +1,166 @@
+#!/usr/bin/env bash
+# time tracking tt
+# created 13.02.2026 21:10pm by Peter Stadler 
+# https://github.com/PeKaStLa
+# 
+# https://github.com/PeKaStLa/timetracking
+#
+# time tracking for projects
+# commands:
+# tt <stakeholder>                # start timetracking for customer
+# tt break                        # finish time tracking and start break
+# tt ls                           # list projects/customers
+# tt add <stakeholder>            # add customer/project
+# tt show                         # show timetable for all stakeholders..
+# tt show <stakeholder>           # show timetable only for named stakeholder
+# tt status                       # show current status: active customer or break
+# tt                              # show commands
+
+source variables.txt
+
+
+
+
+# tt
+if [[ -z $1 ]];
+then
+    echo -e "Usage:" 
+    echo -e "tt                              # show commands"
+    echo -e "tt <stakeholder>                # start timetracking for <stakeholder>"
+    echo -e "tt status                       # show status"    
+    echo -e "tt ls                           # list all stakeholders"    
+    echo -e "tt break                        # finish time tracking and start break"
+    echo -e "tt show                         # show timetable all stakeholders"
+    echo -e "tt show <stakeholder>           # show timetable only for <stakeholder>"
+    echo -e "tt add <stakeholder>            # add <stakeholder>"
+fi
+
+# tt status
+if [[ $1 = "status" ]] && [[ -z $2 ]];
+then
+        source variables.txt
+        echo "$status"
+fi
+
+
+
+# tt ls
+if [[ $1 = "ls" ]] && [[ -z $2 ]];
+then
+        source variables.txt
+        for i in "${!stakeholders[@]}"; do
+              echo "$((i + 1)). ${stakeholders[i]}"
+        done
+fi
+
+# tt ls xxxxx
+if [[ $1 = "ls" ]] && [[ ! -z $2 ]];
+then
+      echo "ptt ls does not take a second argument"
+fi
+
+
+
+
+
+
+# tt <stakeholder> 
+if [[ ! -z $1 ]] && [[ ! $1 = "show" ]] && [[ ! $1 = "ls" ]] && [[ ! $1 = "status" ]] && [[ ! $1 = "add" ]]   && [[ ! $1 = "break" ]] && [[ -z $2 ]];
+then
+    echo "inside tt <stakeholder>"
+    if [[ $1 = $active_stakeholder ]] && [[ -z $2 ]];
+    then
+        echo "Dollar2: $2 is already active-stakeholder: $active_stakeholder"
+    fi
+
+    if [[ ! $1 = $active_stakeholder ]] && [[ -z $2 ]];
+    then
+        echo "inside tt <stakeholder> and its inactive->active and new stakeholder"
+        
+
+        echo "starting time tracking for $1"
+        source variables.txt
+        echo "$status"
+        sed -i '' 's/^status=.*/status="active"/' variables.txt   
+        sed -i '' "s/^active_stakeholder=.*/active_stakeholder=$1/" variables.txt
+        echo "$(date '+%d/%m/%Y %H:%M') going from $active_stakeholder to $1" | tee -a timetable.txt
+        source variables.txt
+        echo "$status"
+    fi
+fi
+
+
+
+
+
+
+# tt <stakeholder>  xxxxx
+if [[ ! -z $1 ]]  && [[ ! -z $2 ]];
+then
+      echo "ERROR: ptt <stakeholder> does not take a second argument"
+fi
+
+
+# tt break
+if [[ $1 = "break" ]] && [[ -z $2 ]] && [[ $status = "active" ]];
+then
+        source variables.txt
+        echo "$status"
+        sed -i '' 's/^status=.*/status="inactive"/' variables.txt   
+        sed -i '' 's/^active_stakeholder=.*/active_stakeholder="none"/' variables.txt
+        echo "$(date '+%d/%m/%Y %H:%M') going from $active_stakeholder to none" | tee -a timetable.txt
+        source variables.txt
+        echo "$status"
+fi
+
+# tt break xxxxx
+if [[ $1 = "break" ]] && [[ ! -z $2 ]];
+then
+      echo "ERROR: ptt break does not take a second argument"
+fi
+
+# tt show
+if [[ $1 = "show" ]] && [[ -z $2 ]];
+then
+      echo "TODO: ptt show"
+fi
+
+# tt show <stakeholder> 
+if [[ $1 = "show" ]] && [[ ! -z $2 ]];
+then
+      echo "TODO: ptt show <stakeholder>"
+fi
+
+# tt show <stakeholder> xxxxx
+if [[ $1 = "show" ]] && [[ ! -z $2 ]]    && [[ ! -z $3 ]];
+then
+      echo "ERROR: ptt show <stakeholder> does not take a third argument"
+fi
+
+
+
+# tt add
+if [[ $1 = "add" ]] && [[ -z $2 ]];
+then
+      echo "ERROR: ptt add <stakeholder> needs a second argument"
+fi
+
+
+# tt add <stakeholder>
+if [[ $1 = "add" ]] && [[ ! -z $2 ]];
+then
+      echo "TODO: ptt add <stakeholder>"
+fi
+
+
+# tt add <stakeholder> xxxxx
+if [[ $1 = "add" ]] && [[ ! -z $2 ]]  && [[ ! -z $3 ]];;
+then
+      echo "ERROR: ptt add <stakeholder> does not take a third argument"
+fi
+
+
+
+
+
+

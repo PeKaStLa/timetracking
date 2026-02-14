@@ -154,7 +154,7 @@ fi
 
 
 # tt add <stakeholder> xxxxx
-if [[ $1 = "add" ]] && [[ ! -z $2 ]]  && [[ ! -z $3 ]];;
+if [[ $1 = "add" ]] && [[ ! -z $2 ]]  && [[ ! -z $3 ]];
 then
       echo "ERROR: ptt add <stakeholder> does not take a third argument"
 fi

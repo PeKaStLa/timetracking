@@ -1,8 +1,24 @@
-13/02/2026 23:55 going from none to statu
-13/02/2026 23:55 going from none to statu
-13/02/2026 23:55 going from none to statu
-13/02/2026 23:55 going from none to statu
-13/02/2026 23:59 going from none to none
-14/02/2026 00:00 going from none to peter
-14/02/2026 00:01 going from peter to peterrrr
-14/02/2026 00:01 going from peterrrr to none
+14/02/2026 02:23 ->-> starting time tracking for test.
+14/02/2026 02:24 ⎮⎮ stopping time tracking for  test for break.
+14/02/2026 02:24 ->-> starting time tracking for breaasdefsef.
+14/02/2026 02:24 ⎮⎮ stopping time tracking for breaasdefsef for switch.
+14/02/2026 02:24 ->-> starting time tracking for papst.
+14/02/2026 02:24 ⎮⎮ stopping time tracking for papst for switch.
+14/02/2026 02:24 ->-> starting time tracking for Franziskus.
+14/02/2026 02:24 ⎮⎮ stopping time tracking for Franziskus for switch.
+14/02/2026 02:24 ->-> starting time tracking for PeterDerGrosse.
+14/02/2026 02:24 ⎮⎮ stopping time tracking for PeterDerGrosse for switch.
+14/02/2026 02:24 ->-> starting time tracking for PeterDerKleeene.
+14/02/2026 02:24 ⎮⎮ stopping time tracking for PeterDerKleeene for switch.
+14/02/2026 02:24 ->-> starting time tracking for Karl.
+14/02/2026 02:24 ⎮⎮ stopping time tracking for Karl for switch.
+14/02/2026 02:24 ->-> starting time tracking for Suesmaus.
+14/02/2026 02:24 ⎮⎮ stopping time tracking for  Suesmaus for break.
+14/02/2026 02:25 ->-> starting time tracking for peter.
+14/02/2026 02:25 ⎮⎮ stopping time tracking for peter for switch.
+14/02/2026 02:25 ->-> starting time tracking for Karl.
+14/02/2026 02:25 ⎮⎮ stopping time tracking for Karl for switch.
+14/02/2026 02:25 ->-> starting time tracking for Rattikarl.
+14/02/2026 02:25 ⎮⎮ stopping time tracking for Rattikarl for switch.
+14/02/2026 02:25 ->-> starting time tracking for PeterKarl.
+14/02/2026 02:25 ⎮⎮ stopping time tracking for  PeterKarl for break.
